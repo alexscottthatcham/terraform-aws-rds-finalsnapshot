@@ -27,7 +27,7 @@ resource "aws_lambda_function" "maintain-rds-final-snapshots" {
   role             = aws_iam_role.maintain-rds-final-snapshots-role[0].arn
   handler          = "maintain_rds_final_snapshots.handler"
   source_code_hash = data.archive_file.maintain-rds-final-snapshots-zip[0].output_base64sha256
-  runtime          = "python3.14"
+  runtime          = "python3.13"
   description      = "MANAGED BY TERRAFORM"
 }
 
@@ -81,7 +81,7 @@ resource "aws_lambda_function" "find-final-snapshot" {
   role             = aws_iam_role.find-final-snapshot-role[0].arn
   handler          = "find_final_snapshot.handler"
   source_code_hash = data.archive_file.find-final-snapshot-zip[0].output_base64sha256
-  runtime          = "python3.14"
+  runtime          = "python3.13"
   description      = "MANAGED BY TERRAFORM"
 }
 
